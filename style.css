@@ -12,10 +12,10 @@
   --bg-off: #f9f6f2;
   --border: #e5e7eb;
   --success: #16a34a;
-  
+
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Outfit', sans-serif;
-  
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -36,7 +36,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 700;
   line-height: 1.2;
@@ -67,12 +72,29 @@ img {
   padding: 0 24px;
 }
 
-.text-center { text-align: center; }
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-4 { margin-top: 2rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-4 { margin-bottom: 2rem; }
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
 
 /* Buttons */
 .btn {
@@ -178,11 +200,13 @@ header.scrolled .logo img {
   transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after, .nav-links a.active::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary);
 }
 
@@ -217,6 +241,7 @@ header.scrolled .logo img {
 /* Hero Section */
 .hero {
   padding-top: 120px;
+  padding-bottom: 100px;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -228,7 +253,10 @@ header.scrolled .logo img {
 .hero::before {
   content: '';
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: url('assets/images/hero_kitchen.png') center/cover no-repeat;
   opacity: 0.3;
   mix-blend-mode: overlay;
@@ -482,7 +510,7 @@ header.scrolled .logo img {
   left: 0;
   width: 100%;
   padding: 40px 30px 30px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: white;
   transform: translateY(20px);
   opacity: 0.9;
@@ -505,42 +533,62 @@ header.scrolled .logo img {
 }
 
 /* Before After Slider */
-.ba-slider-wrap, .ba-slider {
+.ba-slider-wrap,
+.ba-slider {
   height: 400px;
   width: 100%;
 }
+
 .ba-slider-wrap .project-overlay {
   display: none;
 }
+
 .ba-slider {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  cursor: ew-resize;
+  cursor: default;      /* clicking the image no longer does anything */
   border-radius: 16px;
   user-select: none;
 }
-.img-before, .img-after {
+
+.img-before,
+.img-after {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 100%;
   background-size: cover;
   background-position: center;
 }
-.img-before { width: 100%; }
-.img-after { border-right: 2px solid white; }
+
+.img-before {
+  width: 100%;
+}
+
+.img-after {
+  border-right: 2px solid white;
+}
+
 .handle {
   position: absolute;
-  top: 0; bottom: 0;
-  width: 40px;
-  margin-left: -20px;
+  top: 0;
+  bottom: 0;
+  width: 56px;          /* slightly wider touch target */
+  margin-left: -28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
+  pointer-events: all;  /* handle must receive touch/click */
+  cursor: grab;
   z-index: 10;
 }
+
+.handle:active {
+  cursor: grabbing;
+}
+
 .handle-circle {
   width: 40px;
   height: 40px;
@@ -550,7 +598,7 @@ header.scrolled .logo img {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   border: 3px solid white;
 }
 
@@ -625,7 +673,7 @@ header.scrolled .logo img {
 }
 
 .cta-content p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 18px;
   max-width: 500px;
 }
@@ -696,7 +744,7 @@ footer {
 }
 
 .footer-text {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: 24px;
   max-width: 300px;
 }
@@ -706,7 +754,7 @@ footer {
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-links a:hover {
@@ -717,10 +765,12 @@ footer {
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 14px;
-}/* Responsive */
+}
+
+/* Responsive */
 @media (max-width: 992px) {
   .nav-links {
     display: none;
@@ -735,66 +785,131 @@ footer {
     gap: 16px;
     border-top: 1px solid var(--border);
   }
-  .nav-links.active { display: flex; }
-  .phone-link, .d-none-mobile { display: none !important; }
-  .mobile-menu-btn { display: block; }
-  
-  .hero h1 { font-size: 40px; }
-  
-  .projects-grid, .steps-grid, .services-grid, .services-list-grid {
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .phone-link,
+  .d-none-mobile {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .projects-grid,
+  .steps-grid,
+  .services-grid,
+  .services-list-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-banner {
     flex-direction: column;
     text-align: center;
     gap: 30px;
     padding: 40px 20px;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-btns { flex-direction: column; }
-  .trust-grid { flex-direction: column; align-items: flex-start; padding: 20px; }
-  
-  .form-grid { grid-template-columns: 1fr; }
-  
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-btns {
+    flex-direction: column;
+  }
 
-  .hero { padding-top: 100px; }
-  .hero p { font-size: 16px; }
-  .section { padding: 60px 0; }
-  .section-header h2 { font-size: 32px; }
+  .trust-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
 
-  #about .container > div {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+  }
+
+  #about .container>div {
     grid-template-columns: 1fr !important;
   }
 }
 
-/* Mobile CTA Bar */
+/* ── Mobile Floating CTA Pills ───────────────────────────────────────────── */
+/* Two pill buttons stacked on the bottom-LEFT.                               */
+/* The right side stays free for the GHL chatbot — zero conflict.             */
 .mobile-cta-bar {
   display: none;
   position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 9999;
-  box-shadow: 0 -4px 20px rgba(0,0,0,.15);
+  bottom: 24px;
+  left: 16px;
+  right: auto;          /* detach from right edge */
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999999;      /* high, but lets chatbot coexist on the right */
+  pointer-events: none; /* let clicks through the gap between pills */
 }
 
-.mcta-call, .mcta-estimate {
-  flex: 1;
-  padding: 16px;
-  text-align: center;
+.mcta-call,
+.mcta-estimate {
+  pointer-events: all;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 50px;      /* full pill */
   font-weight: 700;
   font-size: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  /* Slide-in entrance animation */
+  animation: pillSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.mcta-estimate {
+  animation-delay: 0.08s;
+}
+
+@keyframes pillSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .mcta-call {
@@ -807,11 +922,27 @@ footer {
   color: white;
 }
 
-.mcta-call:hover { background: #111f30; }
-.mcta-estimate:hover { background: var(--primary-hover); }
+.mcta-call:active,
+.mcta-call:hover {
+  background: #111f30;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+}
 
-@media (max-width: 768px) {
-  .mobile-cta-bar { display: flex; }
-  footer { padding-bottom: 80px; }
-  body { padding-bottom: 60px; }
+.mcta-estimate:active,
+.mcta-estimate:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 122, 26, 0.45);
+}
+
+@media (max-width: 900px) {
+  .mobile-cta-bar {
+    display: flex;
+  }
+
+  /* No extra body/footer padding needed — pills float, don't push content */
+  footer {
+    padding-bottom: 20px;
+  }
 }

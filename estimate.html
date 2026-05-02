@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .page-header {
-            padding: 160px 0 80px;
+            padding: 120px 0 30px;
             background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
             color: white;
             text-align: center;
         }
         .page-header h1 {
             color: white;
-            font-size: 48px;
-            margin-bottom: 16px;
+            font-size: 40px;
+            margin-bottom: 12px;
         }
         .page-header p {
-            font-size: 20px;
+            font-size: 18px;
             color: rgba(255,255,255,0.8);
             max-width: 600px;
             margin: 0 auto;
@@ -30,57 +30,73 @@
         .estimate-layout {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
-            gap: 60px;
-            margin-top: -60px;
+            gap: 40px;
+            margin-top: 30px;
             position: relative;
             z-index: 10;
         }
         
         .trust-column {
-            padding-top: 100px;
+            padding-top: 0px;
         }
         
         .trust-feature {
             display: flex;
             gap: 16px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
         
         .trust-feature-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             background: var(--primary-light);
             color: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             flex-shrink: 0;
         }
         
         .trust-feature h4 {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 4px;
         }
         
         .trust-feature p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
         
         .google-review-snippet {
             background: var(--bg-off);
-            padding: 24px;
+            padding: 20px;
             border-radius: 12px;
             border: 1px solid var(--border);
-            margin-top: 40px;
+            margin-top: 30px;
+        }
+        
+        .estimate-form-wrap {
+            padding: 24px 32px !important;
+        }
+        .form-group {
+            margin-bottom: 12px !important;
+        }
+        .form-control {
+            padding: 10px 14px !important;
+        }
+
+        /* Hide the floating estimate button on the estimate page itself */
+        .mcta-estimate {
+            display: none !important;
         }
         
         @media (max-width: 992px) {
             .estimate-layout {
                 grid-template-columns: 1fr;
                 gap: 40px;
+                margin-top: -20px;
             }
             .trust-column { padding-top: 0; }
         }
@@ -157,7 +173,7 @@
                             </div>
                             <div class="form-group full">
                                 <label class="form-label">Brief Description of Project</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell us what you're looking to achieve..."></textarea>
+                                <textarea class="form-control" rows="2" placeholder="Tell us what you're looking to achieve..."></textarea>
                             </div>
                             <div class="form-group full">
                                 <label class="form-label">Ideal Timeline</label>
@@ -282,12 +298,9 @@
     <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ec6bb652e61570ac7e8724"></script>
 
     <!-- MOBILE STICKY BAR -->
-    <div class="mobile-cta-bar">
+    <div class="mobile-cta-bar" style="justify-content: flex-end; align-items: flex-start;">
         <a href="tel:+15097748005" class="mcta-call">
             <i class="fa-solid fa-phone"></i> Call Now
-        </a>
-        <a href="estimate.html" class="mcta-estimate">
-            <i class="fa-solid fa-calendar-check"></i> Free Estimate
         </a>
     </div>
 </body>
