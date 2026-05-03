@@ -30,6 +30,13 @@
             gap: 30px;
             margin-top: 40px;
         }
+        
+        @media (max-width: 768px) {
+            .services-list-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
 
         .s-card {
             background: white;
@@ -207,9 +214,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <div class="logo mb-2">
+                    <div class="logo mb-2" style="display: flex; align-items: center; gap: 12px;">
                         <img src="Logo/usbestlogo.png" alt="US Best Construction & Remodeling LLC"
                             style="height: 60px;">
+                        <span style="font-family: var(--font-display); font-size: 20px; font-weight: 800; line-height: 1.1; color: white;">US Best<br><span style="color: var(--primary); font-size: 14px; font-weight: 600;">Construction & Remodeling</span></span>
                     </div>
                     <p class="footer-text">Portland's most trusted remodeling contractors. Delivering premium quality,
                         transparent pricing, and unmatched customer service for over 16 years.</p>
